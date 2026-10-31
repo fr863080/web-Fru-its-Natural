@@ -1,0 +1,6 @@
+{
+  "name": "Fru'its Natural - Aguas Frescas Artesanales",
+  "description": "Aguas frescas 100% naturales y artesanales de Cocula, Jalisco. Catálogo de sabores, paquetes especiales y cotizador en vivo con pedidos por WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --color-surface-bg: #fff8f5;
+  --color-cacao-dark: #311302;
+  --color-cacao-deep: #42210b;
+  --color-amber-gold: #f39200;
+  --color-amber-dark: #8a5100;
+  --color-green-leaf: #3c6a05;
+  --color-green-fresh: #5b8c2a;
+}
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f5;
+  color: #311302;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for pleasant browsing */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff1ea;
+}
+::-webkit-scrollbar-thumb {
+  background: #dac2ae;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8a5100;
+}
+
+/* Animación de brinquitos alegre para el sello de la marca */
+@keyframes brinquitos {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  15% {
+    transform: translateY(-16px) scale(1.06) rotate(-2deg);
+  }
+  30% {
+    transform: translateY(0) scale(0.96);
+  }
+  45% {
+    transform: translateY(-9px) scale(1.03) rotate(1.5deg);
+  }
+  60% {
+    transform: translateY(0) scale(0.98);
+  }
+  75% {
+    transform: translateY(-4px) scale(1.01);
+  }
+  90% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-brinquitos {
+  animation: brinquitos 2.2s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+  transform-origin: center bottom;
+}
+
+/* Botones Profesionales con microinteracciones y destello elegante */
+@keyframes sheen {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.btn-primary-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(243, 146, 0, 0.32);
+}
+
+.btn-primary-glow:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 8px 24px rgba(243, 146, 0, 0.45);
+}
+
+.btn-primary-glow:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(243, 146, 0, 0.25);
+}
+
+.btn-primary-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.32),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn-primary-glow:hover::after {
+  animation: sheen 0.85s ease-out;
+}
+
+.btn-secondary-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(91, 140, 42, 0.25);
+}
+
+.btn-secondary-glow:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 8px 22px rgba(91, 140, 42, 0.4);
+}
+
+.btn-secondary-glow:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(91, 140, 42, 0.2);
+}
+
+.btn-secondary-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn-secondary-glow:hover::after {
+  animation: sheen 0.85s ease-out;
+}
+
+.btn-subtle-lift {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-subtle-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(66, 33, 11, 0.1);
+}
+
+.btn-subtle-lift:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Micro-rebote táctil para botones de incremento/decremento (+ / -) */
+.btn-stepper {
+  transition: all 0.16s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-stepper:hover {
+  transform: scale(1.15);
+}
+
+.btn-stepper:active {
+  transform: scale(0.9);
+}
+
+/* WhatsApp Pro Button Animation with subtle green radiant glow */
+.btn-whatsapp-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp-glow:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp-glow:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn-whatsapp-glow:hover::after {
+  animation: sheen 0.85s ease-out;
+}
+
+/* Micro-interaction for icons inside interactive buttons */
+.btn-icon-hover svg {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-icon-hover:hover svg {
+  transform: scale(1.12);
+}
+
+/* Animación elástica de rebote del logo al llegar al 100% */
+@keyframes logoIntroBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.15) translateY(80px);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.22) translateY(-28px);
+  }
+  60% {
+    transform: scale(0.9) translateY(12px);
+  }
+  75% {
+    transform: scale(1.08) translateY(-8px);
+  }
+  88% {
+    transform: scale(0.98) translateY(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-intro-bounce {
+  animation: logoIntroBounce 0.95s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.45s ease-out forwards;
+}
